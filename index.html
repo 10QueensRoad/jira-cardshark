@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html ng-app="cardshark" class="container">
+<head>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/angular.min.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/underscore-min.js"></script>
+</head>
+<body ng-controller="InputController">
+	<form class="form-horizontal" role="form">
+		<div class="form-group" ng-show="!loggedIn">
+			<div class="row">
+				<h1>Cardshark</h1>
+			</div>
+		  	<br>
+		  	<div class = "row">
+			  <div class="col-sm-6">
+			    <div class="input-group">
+			    	<label for="username">Jira username</label>
+			    	<input type="text" class="form-control" id="username" ng-model="username">
+			    </div>
+			  </div>
+			</div>
+			<div class = "row">
+			  <div class="col-sm-6">
+			    <div class="input-group">
+			    	<label for="password">password</label>
+			    	<input type="password" class="form-control" id="password" ng-model="password">
+			    </div>
+			  </div>
+		  	</div>
+		  	<div class = "row">
+			  <div class="col-sm-6">
+			    <button class="form-control" id="login" ng-click="loggedIn = true">Log in</button>
+			  </div>
+		  	</div>
+		</div>
+		<div id="logged-in-section" ng-show="loggedIn">
+			<div class="form-group">
+				<div class="row">
+					<h1>Cardshark</h1>
+				</div>
+		  	<br>
+				<div class="row">
+				  <div class="col-lg-6">
+				    <div class="input-group">
+				    	<input type="text" class="form-control" id="jql" placeholder="jql query" ng-model="jql">
+				      	<span class="input-group-btn">
+				        	<button class="btn btn-default" type="button" ng-click="fetchCards()">Fetch cards</button>
+				      	</span>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
